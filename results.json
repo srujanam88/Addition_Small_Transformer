@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "model_config": {
+      "d_model": 128,
+      "nhead": 4,
+      "num_layers": 6,
+      "dim_feedforward": 512,
+      "dropout": 0.1,
+      "total_params": 1197840,
+      "pos_encoding": "learned"
+    },
+    "training_config": {
+      "num_samples": 75000,
+      "train_size": 45000,
+      "val_size": 15000,
+      "test_size": 15000,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "epochs_trained": 30
+    }
+  },
+  "evaluation": {
+    "in_distribution": {
+      "description": "4-digit addition (trained on)",
+      "num_samples": 15000,
+      "loss": 2.6343550802020047e-05,
+      "character_accuracy": 1.0,
+      "sequence_accuracy": 1.0
+    },
+    "length_generalization_k_minus_1": {
+      "description": "3-digit addition (k-1 generalization)",
+      "num_samples": 700,
+      "loss": 11.600863774617514,
+      "character_accuracy": 0.16200248756218905,
+      "sequence_accuracy": 0.0
+    },
+    "length_generalization_k_plus_1": {
+      "description": "5-digit addition (k+1 generalization)",
+      "num_samples": 1000,
+      "loss": 13.150370955467224,
+      "character_accuracy": 0.15794251134644477,
+      "sequence_accuracy": 0.0
+    },
+    "length_generalization_k_plus_2": {
+      "description": "6-digit addition (k+2 generalization)",
+      "num_samples": 1000,
+      "loss": 12.367404103279114,
+      "character_accuracy": 0.15203679369250986,
+      "sequence_accuracy": 0.0
+    }
+  },
+  "best_checkpoint": {
+    "epoch": 29,
+    "train_seq_acc": 0.9899777777777777,
+    "val_seq_acc": 1.0
+  }
+}
